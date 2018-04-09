@@ -1,0 +1,23 @@
+{% extends 'blog/base.html' %}
+<div class="container">
+  <div class="=row">
+
+
+    {% if user_posts %}
+  
+      {% for post in user_posts %}
+      <div class="post">
+        <h5>Posted By:{{ post.author }}</h5>
+        <div class="date">
+          {{ post.published_date }}
+        </div>
+        <h4><a class="dis" href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h4>
+
+      </div>
+      {% endfor %}
+
+    {% endif %}
+
+
+  </div>
+</div>
